@@ -17,7 +17,7 @@ switch (process.env.NODE_ENV) {
         break;
     default:
         link = 'mongodb://test:1234test@ds151247.mlab.com:51247/nauka';
-        storageFolder = 'client/public/upload';
+        storageFolder = 'client/build/upload';
         break;
 }
 
