@@ -4,6 +4,7 @@ import {link} from './config';
 
 
 
+console.log(link);
 
 export default function(){
     mongoose.connect(link, { useUnifiedTopology:true, useNewUrlParser: true })

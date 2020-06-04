@@ -1,28 +1,2 @@
 
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017"}
-{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"listen EADDRINUSE: address already in use :::5000"}
-{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017"}
-{"level":"error"}
-{"level":"error"}
-{"level":"error"}
+
