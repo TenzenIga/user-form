@@ -42,7 +42,8 @@ export default function AddUser(props:Props) {
       axios.post('/api/workers', form).then(res =>{
           
         if(res.status === 200){
-            let newWorkersList = [...workers, res.data]
+            let newWorker = {...res.data, show:true}
+            let newWorkersList = [...workers, newWorker]
             dispatch({type:'SAVE_WORKER', payload:newWorkersList})
             close(false)
           }          

@@ -43,7 +43,7 @@ export default function EditUser(props:Props) {
         if(res.status === 200){
            let editedWorkers = workers.map((worker:IWorker)=>{
               if(worker._id === res.data._id){
-                return res.data;
+                return {...res.data, show:true};
               }
               return worker;
             })
