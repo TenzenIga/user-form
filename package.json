@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "env NODE_ENV=development nodemon --exec ts-node server/app.ts",
+    "start": "nodemon --exec ts-node server/app.ts",
     "client": "npm start --prefix client",
     "build": "tsc",
     "test": "env NODE_ENV=test jest --watchAll --verbose ",
