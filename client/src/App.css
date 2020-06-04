@@ -1,0 +1,21 @@
+
+
+.App{
+  width: 80%;
+  margin:30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+
+hr{
+  margin-top: 20px;
+  width: 98%;
+  height: 1.5px;
+  border: none;
+  background:#e1e5e6;
+}
+
+
+
