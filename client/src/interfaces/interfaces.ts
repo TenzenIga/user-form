@@ -17,10 +17,10 @@ export interface IWorker{
     birthday:Date
     position:string
     city:string
-    street:string
-    building:string
-    flat:string
-    photo:string | null
+    street:string | null
+    building:string | null
+    flat:string | null
+    photo:string
     isRemote:boolean
     show:boolean
 }

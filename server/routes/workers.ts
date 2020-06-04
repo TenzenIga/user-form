@@ -34,10 +34,10 @@ router.post('/' , upload.single('userPhoto'), validateWorker,  asyncWrapper(
             birthday:req.body.birthday,
             position:req.body.position,
             city:req.body.city,
-            street:req.body.street,
-            building:req.body.building,
-            flat:req.body.flat,
             isRemote:req.body.isRemote,
+            street:req.body.street && req.body.street,
+            building:req.body.building && req.body.building,
+            flat:req.body.flat && req.body.flat,
             photo:req.file && req.file.filename
         })
         
@@ -60,10 +60,10 @@ router.put('/:id', upload.single('userPhoto'), validateId, validateWorker, async
             worker.birthday = req.body.birthday;
             worker.position = req.body.position;
             worker.city = req.body.city;
-            worker.building = req.body.building;
-            worker.street = req.body.street;
-            worker.flat = req.body.flat;
             worker.isRemote = req.body.isRemote;
+            worker.building = req.body.building && req.body.building;
+            worker.street = req.body.street && req.body.street;
+            worker.flat = req.body.flat && req.body.flat;
             
             if(req.file){
                 

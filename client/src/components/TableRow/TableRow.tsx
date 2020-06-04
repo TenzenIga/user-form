@@ -3,6 +3,7 @@ import { IWorker } from '../../interfaces/interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { getAge, formatBirthday } from '../../utils/getAge';
+import { converAdrress } from '../../utils/convertAddress';
 
 
 type Props = {
@@ -12,8 +13,10 @@ type Props = {
     show:boolean
 }
 
+
 export const TableRow = (props:Props) => {
     const {worker, active, selectWorker, show} = props;
+
     return (
        <>
         {
@@ -42,7 +45,7 @@ export const TableRow = (props:Props) => {
             {worker.isRemote && <FontAwesomeIcon icon={faCheck} /> }
           </td>
           <td>
-            {`${worker.city}, ${worker.street}, ${worker.building}, ${worker.flat}`}
+            {converAdrress(worker.city, worker.street, worker.building, worker.flat)}
           </td>
         </tr>)
       }

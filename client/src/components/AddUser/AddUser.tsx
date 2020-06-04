@@ -8,8 +8,10 @@ import { Store } from "../../context/context";
 
 
 type Inputs = {
-  example: string,
-  exampleRequired: string,
+  first_name:string;
+  last_name:string;
+  birthday:Date;
+  city:string;
 };
 
 type Props = {
@@ -19,7 +21,7 @@ type Props = {
 
 export default function AddUser(props:Props) {
   const {close} = props;
-  const { register, handleSubmit, control } = useForm<Inputs>();
+  const { register, handleSubmit, errors, control } = useForm<Inputs>();
   const {state, dispatch} = React.useContext(Store);
   const {workers} = state;
 
@@ -35,10 +37,19 @@ export default function AddUser(props:Props) {
       form.append('position', data.position);
       form.append('isRemote', data.isRemote);
       form.append('city', data.city);
-      form.append('street', data.street);
-      form.append('building', data.building);
-      form.append('flat', data.flat);
-
+      
+      if(data.street){
+        form.append('street', data.street);
+      }
+      
+      if(data.building){
+        form.append('building', data.building);
+      }
+      
+      if(data.flat){
+        form.append('flat', data.flat);
+      }
+      
       axios.post('/api/workers', form).then(res =>{
           
         if(res.status === 200){
@@ -77,11 +88,11 @@ export default function AddUser(props:Props) {
             <input name="userPhoto" type='file' ref={register} onChange={handleChange} />
          </div>
          <div className='user-form__col '>
-             <label htmlFor="first_name">Имя</label>
+             <label htmlFor="first_name">Имя {errors.first_name && "*"}</label>
              <input name="first_name" ref={register({ required: true })} />
-             <label htmlFor="last_name">Фамилия</label>
+             <label htmlFor="last_name">Фамилия  {errors.last_name && "*"}</label>
              <input name="last_name" ref={register({required: true})} />
-             <label htmlFor="birthday">Дата рождения</label>
+             <label htmlFor="birthday">Дата рождения   {errors.birthday && "*"}</label>
              <Controller as={ReactDatePicker}
                 control={control}
                 valueName="selected" // DateSelect value's name is selected
@@ -102,14 +113,14 @@ export default function AddUser(props:Props) {
              </label>
          </div>
          <div className='user-form__col'>
-             <label htmlFor="city">Город</label>
+             <label htmlFor="city">Город {errors.city && "*"}</label>
              <input name="city" ref={register({ required: true })} />
-             <label htmlFor="street">Улица</label>
-             <input name="street" ref={register({ required: true })} />
+             <label htmlFor="street" >Улица</label>
+             <input name="street"  ref={register()}/>
              <label htmlFor="building">Дом</label>
-             <input name="building"  ref={register({ required: true })} />
+             <input name="building"   ref={register()}/>
              <label htmlFor="flat">Квартира</label>
-             <input name="flat" ref={register({ required: true })} />
+             <input name="flat"  ref={register()} />
          </div>
          </div> 
         <button className='user-form__submit' type="submit" >Сохранить</button>      

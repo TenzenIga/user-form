@@ -8,9 +8,9 @@ interface IWorker extends Document{
     birthday:Date
     position:string
     city:string
-    street:string
-    building:string
-    flat:string
+    street:string | null
+    building:string | null
+    flat:string | null
     photo:string | null
     isRemote:boolean
 }
@@ -41,16 +41,14 @@ const workerSchema = new Schema({
         required:true
     },
     street:{
-        type:String,
-        required:true
+        type:String
+        
     },
     building:{
-        type:String,
-        required:true
+        type:String
     },
     flat:{
-        type:String,
-        required:true
+        type:String
     },
     photo:{ 
         type:String

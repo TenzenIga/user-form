@@ -6,7 +6,6 @@
   "scripts": {
     "start": "ts-node-dev --respawn server/app.ts",
     "client": "npm start --prefix client",
-    "build": "tsc",
     "test": "env NODE_ENV=test jest --watchAll --verbose ",
     "dev": "concurrently \"npm start\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ./client && npm run build --prefix ./client"

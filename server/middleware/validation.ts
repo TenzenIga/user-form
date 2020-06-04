@@ -9,9 +9,9 @@ const schema = Joi.object({
     birthday:Joi.date().required(),
     position:Joi.string().required(),
     city:Joi.string().required(),
-    street:Joi.string().required(),
-    building:Joi.string().required(),
-    flat:Joi.string().required(),
+    street:Joi.string(),
+    building:Joi.string(),
+    flat:Joi.string(),
     isRemote:Joi.boolean()
 })
 
