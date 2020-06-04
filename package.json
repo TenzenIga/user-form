@@ -9,7 +9,7 @@
     "build": "tsc",
     "test": "env NODE_ENV=test jest --watchAll --verbose ",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ./client && npm run build --prefix ./client"
+    "heroku-postbuild": "env SKIP_PREFLIGHT_CHECK=true NPM_CONFIG_PRODUCTION=false npm install --prefix ./client && npm run build --prefix ./client"
   },
   "keywords": [],
   "author": "",
