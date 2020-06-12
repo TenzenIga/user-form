@@ -1,3 +1,4 @@
+
 import express from 'express';
 import logging from './startup/logging';
 import routes from './startup/routes';
@@ -13,10 +14,14 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
 
+
+
+
 prod(app);
 logging(app);
 db();
 routes(app);
+
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
 

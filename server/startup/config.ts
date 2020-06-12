@@ -6,6 +6,7 @@ let link:string;
 let storageFolder:string;
 
 
+
 switch (process.env.NODE_ENV) {
     case 'development': 
         link = 'mongodb://localhost/nauka';

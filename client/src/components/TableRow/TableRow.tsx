@@ -23,7 +23,7 @@ export const TableRow = (props:Props) => {
         show &&
           (<tr key={worker._id} onClick={()=>selectWorker(worker)} className={active ? "active" : ""} >
            <td>
-          <div className='user-photo' style={{backgroundImage: worker.photo ? `url(./upload/${worker.photo})`: 'url(./upload/default.png)' }}>
+          <div className='user-photo' style={{backgroundImage: worker.photo ? `url(${worker.photo})`: 'url(./upload/default.png)' }}>
           </div>
           </td>
           <td>

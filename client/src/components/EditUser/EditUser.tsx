@@ -76,7 +76,7 @@ export default function EditUser(props:Props) {
   }
   // URL.createObjectURL
   const userPhoto = {
-      backgroundImage : selected.photo ? `url(./upload/${selected.photo})` : `url(${userpic})`
+      backgroundImage : selected.photo ? `url(${selected.photo})` : `url(${userpic})`
   }
   
   if(file){

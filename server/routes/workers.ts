@@ -27,7 +27,6 @@ router.get('/',  asyncWrapper(
 
 router.post('/' , upload.single('userPhoto'), validateWorker,  asyncWrapper(
     async (req:Request, res:Response)=>{
-                
         let worker = new Worker({
             first_name:req.body.first_name,
             last_name:req.body.last_name,
@@ -38,7 +37,7 @@ router.post('/' , upload.single('userPhoto'), validateWorker,  asyncWrapper(
             street:req.body.street && req.body.street,
             building:req.body.building && req.body.building,
             flat:req.body.flat && req.body.flat,
-            photo:req.file && req.file.filename
+            photo:req.file && req.file.path
         })
         
         worker = await worker.save();
